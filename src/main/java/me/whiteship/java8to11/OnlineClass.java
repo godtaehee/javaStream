@@ -34,7 +34,7 @@ public class OnlineClass {
         return closed;
     }
 
-    public void setClosed(boolean closed) {
+    public void setClosed(boolean cl6tosed) {
         this.closed = closed;
     }
 }
