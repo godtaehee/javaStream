@@ -33,6 +33,25 @@ public class App {
         List<List<OnlineClass>> keesunEvents = new ArrayList<>();
         keesunEvents.add(springClasses);
         keesunEvents.add(javaClasses);
+        
+        
+        // 해답
+        
+      System.out.println("spring 으로 시작하는 수업");
+        springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .forEach(oc -> System.out.println(oc.getId()));
+
+        System.out.println("close 되지 않은 수업");
+        springClasses.stream()
+                .filter(Predicate.not(OnlineClass::isClosed))
+                .forEach(oc -> System.out.println(oc.getId()));
+
+        System.out.println("수업 이름만 모아서 스트림 만들기");
+        springClasses.stream()
+                .map(OnlineClass::getTitle)
+                .forEach(System.out::println);
+        
 
 
         System.out.println("spring 으로 시작하는 수업");
